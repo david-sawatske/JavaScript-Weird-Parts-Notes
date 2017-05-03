@@ -22,10 +22,10 @@
 // Global Execution Context
 
 // Creates for you a Global Object (key, val pairs) and 'this' variable
-//   => in browser, the golbal object is the window object
+//   => in browser, the global object is the window object
 //   => at global level global object === 'this' (ie window object)
 
-// these vars and functions are  not within a funtion, so they are global in
+// these vars and functions are not within a funtion, so they are global in
 // scale and are attached to the global object.
 var a = 'hello';
 
