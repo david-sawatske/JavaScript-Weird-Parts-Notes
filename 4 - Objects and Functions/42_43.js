@@ -82,7 +82,7 @@ fs[2](); // => 3
 
 
 // What if we did want the output to equal 0, 1, 2?
-// In new ES6
+// In new ES6, let variable assignment
 function buildFunctions2() {
     var arr = [];
 
