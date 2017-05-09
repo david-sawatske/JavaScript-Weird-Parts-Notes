@@ -57,8 +57,8 @@ var checkPastLimit = function(limiter, item) {
 // how would we preset a parameter for limiter so that the item from arr1 is
 // the only thing passed to fn(arr[1])?
 //    => use bind() to create a copy of checkPastLimit with a preset for limiter
-var arr4 = mapForEach(arr1, checkPastLimit.bind(this, 1)); // sets limiter to 1
-console.log(arr4); // => [ false, true, true ]
+var arr4 = mapForEach(arr1, checkPastLimit.bind(this, 1)); // sets limiter to 1 for
+console.log(arr4); // => [ false, true, true ]                every subsequent call
 
 
 // create a funct where you only pass in the limiter

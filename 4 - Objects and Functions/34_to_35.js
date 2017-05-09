@@ -37,7 +37,7 @@ function greet(firstname, lastname, language = 'en') {  // sets default for engl
 }
 
 greet('John'); // although we aren't passing the expected args, JS will not error
-         // because hoisting sets them
+               // because hoisting sets them
 // => John
 //    undefined
 //    en

@@ -14,8 +14,8 @@ var person = {                 // defined using Object literal syntax
     lastname: 'Doe',
     getFullName: function() {  // function expression
 
-        var fullname = this.firstname + ' ' + this.lastname; // 'this' points to the
-        return fullname;                                     // person obj
+        var fullname = this.firstname + ' ' + this.lastname; // 'this' points to
+        return fullname;                                     //  the person obj
     }
 }
 
@@ -28,7 +28,7 @@ var logName = function(lang1, lang2) {
 
 }
 
-logName(); // => fails as 'this' does not poin to the person object, for which
+logName(); // => fails as 'this' does not point to the person object, for which
            //    the getFullName() function exists
 
 
@@ -53,7 +53,7 @@ logName(); // this point to a copy of 'logName' with 'this' var bound to 'person
 // Other way to specifiy 'this' var
 logName.call(person, 'en', 'es');    // call lets you decide the 'this' var
                                      // does not create copy, just executes
-logName.apply(person, ['en', 'es']); // same as call, but want array of params
+logName.apply(person, ['en', 'es']); // same as call, but wants array of params
                                      // array can be more useful (math etc)
 
 // Can also be done on the fly by wrapping ()

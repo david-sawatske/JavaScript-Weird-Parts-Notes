@@ -10,7 +10,7 @@ function greet(name) {
 }
 greet('John'); // must be invoked to actually execute the code
 
-// Funciton Expression - not put into memory initially, rather during execution
+// Function Expression - not put into memory initially, rather during execution
 //  => creates object on the fly (function literal)
 var greetFunc = function(name) { // here is when a funct obj is created
   console.log('howdy ' + name);
@@ -21,10 +21,10 @@ greetFunc('John'); // invoked using variable that points to that memory location
 // Immediately Invoked Funciton Expression (IIFE)
 // funciton is obj, so how can we invoke it at the point of creation (on the fly)
 var greeting = function(name)  {
-    return 'hi ' + name;
+    return 'Hi ' + name;
 }('John'); // the parenthesis invokes function immedeatly after it's creation
 
-console.log(greeting);
+console.log(greeting); // => Hi John
 
 // These are vaid JS and do not throw an error (but don't do anything)
 'test string';

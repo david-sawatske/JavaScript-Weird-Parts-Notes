@@ -1,6 +1,7 @@
 // 30 //
 
-// First Class Funcions - Everything that you can do with other types, you can do with functions.
+// First Class Funcions - Everything that you can do with other types, you can do
+//                        with functions.
 //  => Assign then to variables, pass them around, create them on the fly
 
 // Functions are objects - has all features of object, plus special properties
@@ -8,7 +9,7 @@
 //  => also can have optional name, invocable code (where the lines of code are written)
 
 function greet() {      // this is creating a function object with the special
-    console.log('hi');  // properties of name ('greet') and code (console.log('hi'));
+    console.log('hi');  // properties of name ('greet') and cod (console.log('hi'));
 }
 
 // since the function is an object, we can add properties for it with dot notation
@@ -39,15 +40,15 @@ function greet() {
   console.log('hi');
 }
 
-// Function Expressions - function object is created is placed into memory by = operator and knows
-//                        the location of the variable. without a name property (anonymous function),
-//                        but  with the code property (console.log('hi');)
+// Function Expressions - function object is created is placed into memory by = operator
+//                        and knows the location of the variable. without a name property
+//                        (anonymous function), but with the code property (console.log('hi');)
 var anonymousGreet = function() {
   console.log('hi');
 }
 
 // to envoke the anonymous function, need to point at it and tell to run it's code
-anonymous(); // the variable knows where the funciton object lives in memory
+anonymousGreet(); // the variable knows where the funciton object lives in memory
 //  => the envocation must happen after the creation because the var anonymousGreet
 //     is initially set to undefined as only the variable has been hoisted
 

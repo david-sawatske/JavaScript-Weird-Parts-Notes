@@ -12,7 +12,7 @@ console.log(a); // => 2
 console.log(b); // => 3
 
 // By Reference (all objects) - two things point to the same place in memory
-var c = { greeting: 'hi'};
+var c = { greeting: 'hi' };
 var d;
 
 d = c; // this is pointing d to the same place in memory as does c
@@ -43,7 +43,7 @@ console.log(d); // => { greeting: 'Hola' } remains pointing to the original valu
 
 // Objects, Function and 'this'
 
-// Execution Context is created (CREATION PHASE) - focuses on the running on the code
+// Execution Context is created (CREATION PHASE) - focuses on the running of the code
 //                                                 portion of the function object
 // has Variable Enviornment (where vars created inside that function live)
 // has refernce to it's Outer Lexial Enviornment (tells how to look down scope chain)
@@ -68,15 +68,16 @@ b(); // also Window object when simply invoking the function
 // What about an object method?
 // when a function is a method attached to an object, the 'this' keyword is
 // attached to the object inside which the method resides
-var c = {
-  name: 'the c object',
-  log: function() {
+var c = {                 // creation of an object literal
+  name: 'the c object',   // key/ value for name (string) and log (function)
+  log: function() {       // this is the log method if object cs
     this.name = 'Updated c object';
     console.log(this);
   }
 }
 
-c.log(); //returns the object
+c.log(); // returns the object because the function log is a method (log())
+         // attached to an object (c)
 // => { name: 'Updated c object', log: [Function: log] }
 
 
@@ -85,11 +86,11 @@ c.log(); //returns the object
 var c = {
   name: 'the c object',
   log: function() {
-    this.name = 'Updated c object';
+    this.name = 'Updated c object';  // 'this' points to the Containing Obj (c)
     console.log(this);
 
     var setname = function(newname) {
-      this.name = newname;
+      this.name = newname;          // 'this' points to the Global Obj
     }
     setname('update c object again');
     console.log(this);
@@ -99,7 +100,7 @@ var c = {
 c.log();
 // => { name: 'Updated c object', log: [Function: log] }
 // => { name: 'Updated c object', log: [Function: log] }
-// this idicates that 'the setname('update c object again');' didn't do anything
+// this indacates that 'the setname('update c object again');' didn't do anything
 //  => looking into it, on line 94, the = created and added the name property
 //     on the global object. meaning that 'this' points to the global object
 

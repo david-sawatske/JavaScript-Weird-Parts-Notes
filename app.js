@@ -1,21 +1,19 @@
-var person = {                 // defined using Object literal syntax
-    firstname: 'John',
-    lastname: 'Doe',
-    getFullName: function() {  // function expression
+var a1 = [1,2,3];
 
-        var fullname = this.firstname + ' ' + this.lastname; // 'this' points to the
-        return fullname;                                     // person obj
-    }
+function mapForEach(arr, fn) {
+  var newArr = [];
+  for (var i=0; i < arr.length; i++) {
+    newArr.push(fn(arr[i]))
+  }
+
+  return newArr
 }
 
-var logName = function(lang1, lang2) {
+var checkPastLimit = function(limiter) {
+  return function(limiter, item) {
+    return item > limiter;
+  }.bind(this, limiter);
+};
 
-    console.log('Logged: ' + this.getFullName());  // 'this' points to Global Obj
-    console.log('Arguments: ' + lang1 + ' ' + lang2);
-    console.log('-----------');
-
-}.bind(person)
-
-
-
-logName();
+var a2 = mapForEach(a1, checkPastLimit(1));
+console.log(a2)
