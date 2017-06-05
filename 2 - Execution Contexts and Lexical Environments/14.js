@@ -31,5 +31,5 @@ function a() {
 }
 
 var myVar = 1;
-b(); // => gives 'b is not defined' error because it is not in the global exicu context
+b(); // => gives 'b is not defined' error because it is not in the global ex context
 a(); // => 2 because b()'s outer lexial env is now a()

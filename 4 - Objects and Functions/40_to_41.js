@@ -32,8 +32,17 @@ console.log(greeting); // => Hi John
 { name: 'John'}
 
 // a plain function would error as the parser saw 'function' and expects that it
-// is a non-annomous function statment (seen above)
+// is a non-anonymous function statment (seen above)
+
+function(name)  {        // this throws error as the parser expects a function
+    return 'Hi ' + name; // statement, which can't be anonymous
+}
 //  => 'trick' parser by making 'function' not the first thing it sees on that line
+//      - make the grouping operator '(' the first thing on a line of code
+//  => when the parser sees (), it knows that what is inside returns something,
+//     a.k.a an expression
+//     - so it assumes that what's inside is a function expression which will
+//       be invoked on the fly (when the line of code is executed)
 
 // Classic IFFE use
 // this is for when you want a funciton expression, instead of a function statement
